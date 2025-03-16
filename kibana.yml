@@ -1,0 +1,22 @@
+# server.host: '0.0.0.0'
+# elasticsearch.hosts: ['http://elasticsearch:9200']
+# elasticsearch.username: 'kibana_user'
+# elasticsearch.password: 'kibana_password'
+
+# Kibana와 Elasticsearch 간의 연결 설정
+elasticsearch.hosts: ['https://elasticsearch:9200'] # Elasticsearch의 HTTPS 주소
+
+# 인증서 및 SSL 설정
+elasticsearch.ssl.certificateAuthorities: [
+    '/usr/share/kibana/config/certs/ca.crt',
+  ] # Elasticsearch 서버의 CA 인증서 경로
+elasticsearch.ssl.verificationMode: certificate # 인증서 검증 모드 설정 (필요시 'full'로 변경 가능)
+
+# Kibana 서버에서 인증서 사용 (Kibana에서 SSL 사용 시)
+# server.ssl.enabled: true
+# server.ssl.certificate: /usr/share/kibana/config/certs/kibana.crt  # Kibana SSL 인증서
+# server.ssl.key: /usr/share/kibana/config/certs/kibana.key  # Kibana SSL 인증서 키
+
+# Kibana와 Elasticsearch 간 인증 (기본 사용자)
+elasticsearch.username: 'kibana_user' # Elasticsearch의 사용자명
+elasticsearch.password: 'kibana_password' # Elasticsearch의 비밀번호
